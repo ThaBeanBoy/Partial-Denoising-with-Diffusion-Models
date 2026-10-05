@@ -115,8 +115,3 @@ experiments/        checkpoints and results per run
 reports/            result tables and figures for the write-up
 tests/              end-to-end checks on synthetic data
 ```
-
-## Suggestions for the write-up
-
-- Consider adding SMD or SMAP/MSL as a second benchmark to strengthen RQ2. Only a new loader in `src/data/` is needed, because everything after `prepare.py` is independent of the dataset.
-- The test set holds only 8 anomaly segments, so report the mean ± std over seeds. Treat small differences between models with caution.
