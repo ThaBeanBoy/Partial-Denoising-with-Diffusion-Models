@@ -3,6 +3,8 @@
 IT18X57 Advanced Artificial Intelligence research project.
 Theme: Generative Modelling for Anomaly Detection.
 
+Repository: https://github.com/ThaBeanBoy/Partial-Denoising-with-Diffusion-Models
+
 A diffusion model (DDPM) is trained only on normal windows of multivariate system
 metrics. At test time each window is noised forward to step **t\*** and then
 denoised back. The reconstruction error is the anomaly score. The approach is
