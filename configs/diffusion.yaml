@@ -1,0 +1,19 @@
+name: diffusion
+model:
+  T: 100                  # total diffusion steps
+  schedule: cosine        # cosine | linear
+  hidden: 64
+  n_blocks: 6
+  emb_dim: 128
+train:
+  epochs: 60
+  batch_size: 128
+  lr: 0.0005
+  weight_decay: 0.0
+  patience: 10            # early stopping on validation loss
+score:
+  t_star: 30              # forward steps before denoising (RQ1 varies this)
+  n_samples: 4            # noise draws averaged per window
+  sampler: ddim           # ddim (deterministic reverse) | ddpm (stochastic reverse)
+ablation:
+  t_star_values: [2, 5, 10, 20, 30, 40, 50, 70, 100]

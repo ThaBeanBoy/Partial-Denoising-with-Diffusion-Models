@@ -1,0 +1,10 @@
+name: autoencoder
+model:
+  hidden: [256, 128]
+  latent: 32
+train:
+  epochs: 60
+  batch_size: 128
+  lr: 0.001
+  weight_decay: 0.0
+  patience: 10

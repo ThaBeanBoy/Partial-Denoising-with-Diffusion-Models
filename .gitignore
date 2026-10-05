@@ -1,0 +1,30 @@
+# data (download with: python -m src.data.download)
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+# outputs
+experiments/*
+!experiments/.gitkeep
+*.pt
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+.pytest_cache/
+
+# IDE settings
+.idea/
+
+# paper (submitted separately in the manuscript/ folder of the ZIP)
+manuscript/
+
+# exploratory notebook (not part of the submission)
+notebooks/
+
+# generated result tables and figures (regenerate with the rq*.py scripts)
+reports/
+
+# personal study collection (stud_r app), not part of the submission
+*.collection.json

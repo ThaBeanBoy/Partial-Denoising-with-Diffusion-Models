@@ -1,0 +1,18 @@
+# Data pipeline settings (used by scripts/prepare_data.py)
+dataset: openstack                # openstack | synthetic
+raw_dir: data/raw/sequential_data
+processed_path: data/processed/openstack.npz
+
+resample_seconds: 5               # metrics are ~1 Hz; averaged into 5 s bins
+window: 24                        # 24 x 5 s = 2-minute windows
+stride: 1
+block_minutes: 10                 # size of contiguous blocks for the train/val/test split
+train_frac: 0.6                   # share of NORMAL blocks used for training
+val_frac: 0.15                    # share of NORMAL blocks used for threshold selection
+seed: 42
+
+labels:
+  type_by: segment                # segment (point vs collective, RQ3) | service (glance/neutron/nova)
+  merge_gap_seconds: 30           # failures closer than this are one segment
+  point_max_seconds: 120          # segments up to this long are "point" anomalies
+  pad_seconds: 0                  # widen every labelled interval by this much on both sides
