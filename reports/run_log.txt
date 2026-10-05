@@ -1,0 +1,165 @@
+start 10/05/2026 14:29:18
+Training diffusion on 2231 normal windows -> C:\Users\tineyi.chipoyera\Artificial Intelligence\diffusion-anomaly-detection\experiments\diffusion
+epoch   1  train 0.9564  val 0.8856  (0.8s)
+epoch   2  train 0.7962  val 0.7021  (0.6s)
+epoch   3  train 0.6305  val 0.5706  (0.7s)
+epoch   4  train 0.5218  val 0.4871  (1.2s)
+epoch   5  train 0.4469  val 0.4280  (1.0s)
+epoch   6  train 0.3909  val 0.3804  (0.8s)
+epoch   7  train 0.3466  val 0.3447  (0.7s)
+epoch   8  train 0.3131  val 0.3151  (0.7s)
+epoch   9  train 0.2854  val 0.2942  (0.6s)
+epoch  10  train 0.2648  val 0.2774  (0.7s)
+epoch  11  train 0.2493  val 0.2665  (0.7s)
+epoch  12  train 0.2358  val 0.2563  (0.6s)
+epoch  13  train 0.2257  val 0.2493  (0.7s)
+epoch  14  train 0.2184  val 0.2443  (0.9s)
+epoch  15  train 0.2118  val 0.2402  (0.9s)
+epoch  16  train 0.2073  val 0.2357  (0.7s)
+epoch  17  train 0.2018  val 0.2314  (0.7s)
+epoch  18  train 0.1970  val 0.2280  (0.8s)
+epoch  19  train 0.1943  val 0.2274  (0.7s)
+epoch  20  train 0.1918  val 0.2238  (0.6s)
+epoch  21  train 0.1881  val 0.2218  (0.6s)
+epoch  22  train 0.1859  val 0.2209  (0.7s)
+epoch  23  train 0.1838  val 0.2204  (0.6s)
+epoch  24  train 0.1820  val 0.2175  (0.7s)
+epoch  25  train 0.1789  val 0.2156  (0.7s)
+epoch  26  train 0.1777  val 0.2162  (0.7s)
+epoch  27  train 0.1783  val 0.2152  (0.6s)
+epoch  28  train 0.1746  val 0.2166  (0.7s)
+epoch  29  train 0.1748  val 0.2122  (0.7s)
+epoch  30  train 0.1714  val 0.2147  (0.6s)
+epoch  31  train 0.1708  val 0.2116  (0.6s)
+epoch  32  train 0.1685  val 0.2108  (0.7s)
+epoch  33  train 0.1699  val 0.2098  (0.7s)
+epoch  34  train 0.1681  val 0.2078  (0.6s)
+epoch  35  train 0.1673  val 0.2086  (0.6s)
+epoch  36  train 0.1662  val 0.2085  (0.7s)
+epoch  37  train 0.1652  val 0.2077  (0.7s)
+epoch  38  train 0.1646  val 0.2081  (0.7s)
+epoch  39  train 0.1630  val 0.2059  (0.9s)
+epoch  40  train 0.1631  val 0.2069  (0.8s)
+epoch  41  train 0.1629  val 0.2061  (0.7s)
+epoch  42  train 0.1618  val 0.2058  (0.7s)
+epoch  43  train 0.1616  val 0.2047  (0.7s)
+epoch  44  train 0.1596  val 0.2032  (0.8s)
+epoch  45  train 0.1593  val 0.2057  (0.7s)
+epoch  46  train 0.1586  val 0.2060  (0.7s)
+epoch  47  train 0.1584  val 0.2049  (0.6s)
+epoch  48  train 0.1575  val 0.2053  (0.7s)
+epoch  49  train 0.1575  val 0.2051  (0.7s)
+epoch  50  train 0.1566  val 0.2044  (0.7s)
+epoch  51  train 0.1553  val 0.2000  (0.7s)
+epoch  52  train 0.1558  val 0.2010  (0.6s)
+epoch  53  train 0.1559  val 0.2007  (0.6s)
+epoch  54  train 0.1548  val 0.2011  (0.7s)
+epoch  55  train 0.1543  val 0.2006  (0.6s)
+epoch  56  train 0.1546  val 0.2006  (0.6s)
+epoch  57  train 0.1529  val 0.2013  (0.6s)
+epoch  58  train 0.1534  val 0.1997  (0.7s)
+epoch  59  train 0.1526  val 0.1986  (0.7s)
+epoch  60  train 0.1517  val 0.1999  (0.6s)
+== evaluate
+{
+  "overall": {
+    "n": 1746,
+    "n_anomalous": 305,
+    "auroc": 0.8384955802550597,
+    "auprc": 0.42755939390277614,
+    "best_f1": 0.5329400196656834,
+    "best_f1_precision": 0.3806179775280899,
+    "best_f1_recall": 0.8885245901639345,
+    "threshold": 0.14087940752506256,
+    "f1_val_threshold": 0.017857142857142856,
+    "precision": 0.0967741935483871,
+    "recall": 0.009836065573770493,
+    "specificity": 0.9805690492713394
+  },
+  "by_type": {
+    "point": {
+      "n": 1587,
+      "n_anomalous": 146,
+      "auroc": 0.7951764851273373,
+      "auprc": 0.2209118062639112,
+      "best_f1": 0.34944237918215615,
+      "best_f1_precision": 0.3821138211382114,
+      "best_f1_recall": 0.3219178082191781,
+      "threshold": 0.14087940752506256,
+      "f1_val_threshold": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "specificity": 0.9805690492713394
+    },
+    "collective": {
+      "n": 1600,
+      "n_anomalous": 159,
+      "auroc": 0.8782728625735972,
+      "auprc": 0.3414980678011216,
+      "best_f1": 0.45283018867924535,
+      "best_f1_precision": 0.3018867924528302,
+      "best_f1_recall": 0.9056603773584906,
+      "threshold": 0.14087940752506256,
+      "f1_val_threshold": 0.031578947368421054,
+      "precision": 0.0967741935483871,
+      "recall": 0.018867924528301886,
+      "specificity": 0.9805690492713394
+    }
+  }
+}
+== rq1
+{'t_star': 2, 'auroc': 0.8512212602814528, 'auprc': 0.4440614995622517, 'best_f1': 0.5452380952380953, 'f1_val_threshold': 0.0, 'recall': 0.0, 'specificity': 0.9833448993754337, 'precision': 0.0}
+{'t_star': 5, 'auroc': 0.8534464909386696, 'auprc': 0.43779483678691355, 'best_f1': 0.544891640866873, 'f1_val_threshold': 0.0, 'recall': 0.0, 'specificity': 0.9826509368494102, 'precision': 0.0}
+{'t_star': 10, 'auroc': 0.8516399130840377, 'auprc': 0.4361214676100196, 'best_f1': 0.5423728813559322, 'f1_val_threshold': 0.0, 'recall': 0.0, 'specificity': 0.9826509368494102, 'precision': 0.0}
+{'t_star': 20, 'auroc': 0.8437037121306926, 'auprc': 0.4317951768924976, 'best_f1': 0.5410821643286573, 'f1_val_threshold': 0.0, 'recall': 0.0, 'specificity': 0.9819569743233866, 'precision': 0.0}
+{'t_star': 30, 'auroc': 0.8384955802550597, 'auprc': 0.42755939390277614, 'best_f1': 0.5329400196656834, 'f1_val_threshold': 0.017857142857142856, 'recall': 0.009836065573770493, 'specificity': 0.9805690492713394, 'precision': 0.0967741935483871}
+{'t_star': 40, 'auroc': 0.8365797886258404, 'auprc': 0.4272254615989729, 'best_f1': 0.5294705294705294, 'f1_val_threshold': 0.09169054441260745, 'recall': 0.05245901639344262, 'specificity': 0.9805690492713394, 'precision': 0.36363636363636365}
+{'t_star': 50, 'auroc': 0.8351076779558821, 'auprc': 0.42413914403249514, 'best_f1': 0.5275590551181103, 'f1_val_threshold': 0.13812154696132597, 'recall': 0.08196721311475409, 'specificity': 0.9777931991672449, 'precision': 0.43859649122807015}
+{'t_star': 70, 'auroc': 0.8242682108280908, 'auprc': 0.40948443147067026, 'best_f1': 0.5193578847969782, 'f1_val_threshold': 0.2245430809399478, 'recall': 0.14098360655737704, 'specificity': 0.9757113115891742, 'precision': 0.5512820512820513}
+{'t_star': 100, 'auroc': 0.6095471041285081, 'auprc': 0.23580725595630994, 'best_f1': 0.3437185929648241, 'f1_val_threshold': 0.006349206349206349, 'recall': 0.003278688524590164, 'specificity': 0.9937543372657877, 'precision': 0.1}
+ t_star    auroc    auprc  best_f1  f1_val_threshold   recall  specificity  precision
+      2 0.851221 0.444061 0.545238          0.000000 0.000000     0.983345   0.000000
+      5 0.853446 0.437795 0.544892          0.000000 0.000000     0.982651   0.000000
+     10 0.851640 0.436121 0.542373          0.000000 0.000000     0.982651   0.000000
+     20 0.843704 0.431795 0.541082          0.000000 0.000000     0.981957   0.000000
+     30 0.838496 0.427559 0.532940          0.017857 0.009836     0.980569   0.096774
+     40 0.836580 0.427225 0.529471          0.091691 0.052459     0.980569   0.363636
+     50 0.835108 0.424139 0.527559          0.138122 0.081967     0.977793   0.438596
+     70 0.824268 0.409484 0.519358          0.224543 0.140984     0.975711   0.551282
+    100 0.609547 0.235807 0.343719          0.006349 0.003279     0.993754   0.100000
+== rq2
+--- training diffusion seed 0
+diffusion 0 {'auroc': 0.8443, 'auprc': 0.4306, 'best_f1': 0.5497, 'f1_val_threshold': 0.2111}
+--- training diffusion seed 1
+diffusion 1 {'auroc': 0.8331, 'auprc': 0.4207, 'best_f1': 0.5413, 'f1_val_threshold': 0.1526}
+--- training diffusion seed 2
+diffusion 2 {'auroc': 0.8545, 'auprc': 0.4483, 'best_f1': 0.5639, 'f1_val_threshold': 0.2245}
+--- training autoencoder seed 0
+autoencoder 0 {'auroc': 0.8112, 'auprc': 0.36, 'best_f1': 0.538, 'f1_val_threshold': 0.3508}
+--- training autoencoder seed 1
+autoencoder 1 {'auroc': 0.7968, 'auprc': 0.3392, 'best_f1': 0.5324, 'f1_val_threshold': 0.3306}
+--- training autoencoder seed 2
+autoencoder 2 {'auroc': 0.8167, 'auprc': 0.3867, 'best_f1': 0.5332, 'f1_val_threshold': 0.3265}
+--- training vae seed 0
+vae 0 {'auroc': 0.8112, 'auprc': 0.3756, 'best_f1': 0.5346, 'f1_val_threshold': 0.3418}
+--- training vae seed 1
+vae 1 {'auroc': 0.8012, 'auprc': 0.342, 'best_f1': 0.5271, 'f1_val_threshold': 0.3446}
+--- training vae seed 2
+vae 2 {'auroc': 0.8042, 'auprc': 0.3503, 'best_f1': 0.5221, 'f1_val_threshold': 0.356}
+              auroc           auprc         best_f1         f1_val_threshold         precision          recall         specificity        
+               mean     std    mean     std    mean     std             mean     std      mean     std    mean     std        mean     std
+model                                                                                                                                     
+autoencoder  0.8082  0.0103  0.3620  0.0238  0.5345  0.0030           0.3360  0.0130    0.4714  0.0519  0.2634  0.0250      0.9359  0.0171
+diffusion    0.8439  0.0107  0.4332  0.0140  0.5517  0.0114           0.1961  0.0383    0.5145  0.0547  0.1213  0.0260      0.9762  0.0004
+vae          0.8055  0.0051  0.3560  0.0175  0.5279  0.0063           0.3474  0.0075    0.4569  0.0221  0.2809  0.0137      0.9290  0.0090
+== rq3
+                           auroc          recall         best_f1        
+                            mean     std    mean     std    mean     std
+anomaly_type model                                                      
+collective   autoencoder  0.8021  0.0145  0.2222  0.0145  0.3907  0.0061
+             diffusion    0.8761  0.0161  0.2327  0.0499  0.4542  0.0140
+             vae          0.7965  0.0032  0.2180  0.0036  0.3833  0.0066
+point        autoencoder  0.8149  0.0059  0.3082  0.0417  0.3491  0.0017
+             diffusion    0.8089  0.0080  0.0000  0.0000  0.3558  0.0115
+             vae          0.8153  0.0079  0.3493  0.0314  0.3590  0.0089
+done 10/05/2026 14:36:49

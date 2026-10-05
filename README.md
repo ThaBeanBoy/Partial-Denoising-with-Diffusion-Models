@@ -89,10 +89,68 @@ python scripts/evaluate.py --run experiments/diffusion
 python scripts/rq1_noise_ablation.py           # RQ1: sweep t*  -> reports/rq1_noise_ablation.csv + figure
 python scripts/rq2_compare_baselines.py        # RQ2: 3 models x 3 seeds -> reports/rq2_comparison.csv
 python scripts/rq3_anomaly_types.py            # RQ3: point vs collective -> reports/rq3_by_type.csv
+
+python scripts/make_figures.py                 # score timeline + reconstruction figures -> reports/figures/
 ```
+
+`make_figures.py` needs the runs created by `rq2_compare_baselines.py` (it uses `diffusion_seed0` and
+`autoencoder_seed0` by default; pick others with `--diffusion-run` and `--baseline-run`).
 
 Everything runs on a CPU. One training run takes seconds for AE/VAE and about a
 minute for diffusion. A GPU is used automatically if available.
+
+## Example outputs
+
+The tables and figures below come from the runs used in the write-up (OpenStack data, 1,746 test
+windows, 305 of them anomalous). The files themselves are committed in `reports/` (CSV tables,
+`run_log.txt` and `figures/`), and the commands above re-create them.
+
+**Training** (`python scripts/train.py --model diffusion`) prints one line per epoch:
+
+```
+Training diffusion on 2231 normal windows -> experiments/diffusion
+epoch   1  train 0.9564  val 0.8856  (0.8s)
+epoch   2  train 0.7962  val 0.7021  (0.6s)
+...
+epoch  60  train 0.1517  val 0.1999  (0.6s)
+```
+
+**Evaluation** (`python scripts/evaluate.py --run experiments/diffusion`) prints the metrics as JSON
+(excerpt, rounded):
+
+```
+"overall": {"n": 1746, "n_anomalous": 305, "auroc": 0.8385, "auprc": 0.4276, "best_f1": 0.5329,
+            "threshold": 0.1409, "f1_val_threshold": 0.0179, "precision": 0.0968,
+            "recall": 0.0098, "specificity": 0.9806}
+```
+
+**RQ2**: diffusion vs baselines, mean ± std over seeds 0-2 (`reports/rq2_comparison.csv`):
+
+| Model | AUROC | AUPRC | best F1 | F1 at val threshold |
+|---|---|---|---|---|
+| Diffusion | 0.844 ± 0.011 | 0.433 ± 0.014 | 0.552 ± 0.011 | 0.196 ± 0.038 |
+| Autoencoder | 0.808 ± 0.010 | 0.362 ± 0.024 | 0.535 ± 0.003 | 0.336 ± 0.013 |
+| VAE | 0.806 ± 0.005 | 0.356 ± 0.018 | 0.528 ± 0.006 | 0.347 ± 0.008 |
+
+**RQ1**: effect of the noise level t\* on one diffusion model (`reports/rq1_noise_ablation.csv`):
+
+| t\* | 2 | 5 | 10 | 20 | 30 | 40 | 50 | 70 | 100 |
+|---|---|---|---|---|---|---|---|---|---|
+| AUROC | 0.851 | 0.853 | 0.852 | 0.844 | 0.838 | 0.837 | 0.835 | 0.824 | 0.610 |
+| F1 at val threshold | 0 | 0 | 0 | 0 | 0.018 | 0.092 | 0.138 | 0.225 | 0.006 |
+
+**RQ3**: AUROC by anomaly type, mean over seeds 0-2 (`reports/rq3_by_type.csv`):
+
+| Type | Diffusion | Autoencoder | VAE |
+|---|---|---|---|
+| Collective | 0.876 | 0.802 | 0.797 |
+| Point | 0.809 | 0.815 | 0.815 |
+
+**Figures** (`python scripts/make_figures.py`, written to `reports/figures/`):
+
+- `scores_timeline.png`: the anomaly score of every test window over time for the diffusion model and a baseline. Red windows overlap a labelled failure and the dashed line is the validation threshold.
+- `reconstructions.png`: a normal window and a collective-anomaly window, noised to several t\* values and denoised back. The normal window is reproduced closely, while the anomalous one is pulled towards normal behaviour, which is what makes its error large.
+- `rq1_noise_ablation.png` (from `rq1_noise_ablation.py`): AUROC, sensitivity, specificity and F1 against t\*.
 
 ## Metrics
 
@@ -112,8 +170,8 @@ src/models/         denoiser (dilated 1D-conv, timestep-conditioned), DDPM, auto
 src/scoring/        batch scoring (partial denoising for the diffusion model)
 src/evaluation/     metrics, per-anomaly-type breakdown
 src/pipeline.py     training loop (early stopping on val loss) and evaluation
-scripts/            prepare / train / evaluate / rq1 / rq2 / rq3
+scripts/            prepare / train / evaluate / rq1 / rq2 / rq3 / make_figures
 experiments/        checkpoints and results per run
-reports/            result tables and figures for the write-up
+reports/            result tables, figures and the run log for the write-up (committed)
 tests/              end-to-end checks on synthetic data
 ```
